@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple go server</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <script defer src="/script.js"></script>
+  </head>
+  <body>
+    <h1>Image optimizer</h1>
+
+    <main ondrop="onDrop(event);" ondragover="onDragOver(event)">
+      <div class="pick-drop">
+        <button type="button" onclick="onPickImages(event)">Pick</button>
+        <span>or</span>
+        <h3>drop files</h3>
+      </div>
+
+      <ul id="files-list">
+        <li class="files-list__header">
+          <span>Name</span>
+          <span>Size</span>
+          <span>Original type</span>
+          <span>Goal type</span>
+          <span>Actions</span>
+        </li>
+      </ul>
+
+      <input
+        id="file-input"
+        type="file"
+        accept="image/png, image/jpeg, image/webp"
+        multiple
+        oninput="onHandleFileInputChange(event)"
+      />
+      <button type="button" id="optimize-button" data-visible="false" onclick="uploadFiles()">
+        Optimize
+      </button>
+    </main>
+  </body>
+</html>
