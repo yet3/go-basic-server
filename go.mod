@@ -1,4 +1,4 @@
-module github.com/yet3/go-basic-server
+module github.com/yet3/go-server-img-optimizer
 
 go 1.23.2
 
